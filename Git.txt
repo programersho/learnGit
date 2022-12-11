@@ -1,0 +1,1659 @@
+
+
+#########################################################################
+############################## learn Git ################################
+#########################################################################
+
+
+/////////////////////////////////////////////////////////////////////////
+//////////////////// Version Control System in git //////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+Version Control System in git :
+ 1-Distributed Version Control
+ 2-Group used
+ 3-repository for person and unic team (fork main project)
+ 4-change save by patch
+ 5-track changes (follow => changes) in file
+ 6-merge working repository (strat repository name is master)
+ 7-file save in system for user and save in github for team
+
+
+/////////////////////////////////////////////////////////////////////////
+//////////////////////// who should use git /////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+who should use git :
+ 1-every one to used change file
+ 2-review change time to time
+ 3-see view among version
+ 4-back to old version
+ 5-share changes between colleagues
+ 6-git order command line
+ 7-git used by programming and developer
+ 8-don't bother used binary
+ 9-track word
+
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////// structure git ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+* working directory   => in project folder
+* staging index directory => in project/.git folder
+* repository directory  => in project/.git folder
+* working ( git add . send track to) staged ( git commit -m "message" send track to) repository
+
+
+/////////////////////////////////////////////////////////////////////////
+///////////////////////////// system git ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+config git 
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+system git :
+ system:Program File\Git\etc\.gitconfig
+ ***********************************
+  order:
+   git config --system
+--------------------------------------------------------------------
+user git:  
+ $Home\.gitconfig (Home in name user:MEIAD)
+ ***********************************
+  order:
+   git config --global 
+   git config --global user.name "meiadnoushadi"
+   git config --global user.email "meiadnoushadi@gmail.com"
+   git config --global user.core.editor "notepad.exe"
+--------------------------------------------------------------------
+project git: 
+ my_name_project\.git\config
+ ***********************************
+  order:
+    git config
+--------------------------------------------------------------------
+show config file in user :
+
+ write order in bash git " cat .gitconfig " for in directory user
+ ***********************************
+  order:
+   $ cat .gitconfig
+   ^^^^^^^^^^^^^^^^
+   [user]
+     name = MeiadNoushadi
+     email = meiadnoushadi@gmail.com
+   [safe]
+     directory = E:/programing/Git/gityoutub/second_git_project
+   [core]
+     editor = notepad.exe
+   [color]
+     ui = true
+
+
+/////////////////////////////////////////////////////////////////////////
+//////////////////////////// general order //////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+------------------------------------------------
+git --help
+^^^^^^^^^^
+ show details git
+ ***********************************
+  $ git help
+  usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+    [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+    [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+    [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]           [--super-prefix=<path>] [--config-env=<name>=<envvar>]      
+    <command> [<args>]
+
+  These are common Git commands used in various situations:
+
+  start a working area (see also: git help tutorial)
+  clone     Clone a repository into a new directory
+  init      Create an empty Git repository or reinitialize an existing one
+  ... ====> to move in bash key(B):back key(F):forward
+------------------------------------------------
+git --help nameOrder
+^^^^^^^^^^^^^^^^^^^^
+ show details order git
+ ***********************************
+  open html page in c drive in pc in windows
+  view details order git
+------------------------------------------------
+git --version
+^^^^^^^^^^^^^
+ show version git in system
+ ***********************************
+  $ git --version
+  git version 2.37.1.windows.1
+------------------------------------------------
+git config --list
+^^^^^^^^^^^^^^^^^
+ show list config
+ ***********************************
+  $ git config --list
+  diff.astextplain.textconv=astextplain
+  filter.lfs.clean=git-lfs clean -- %f
+  filter.lfs.smudge=git-lfs smudge -- %f
+  filter.lfs.process=git-lfs filter-process
+  filter.lfs.required=true
+  http.sslbackend=openssl
+  http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+  core.autocrlf=true
+  core.fscache=true
+  core.symlinks=false
+  pull.rebase=false
+  credential.helper=manager-core
+  credential.https://dev.azure.com.usehttppath=true
+  init.defaultbranch=master
+  user.name=MeiadNoushadi
+  user.email=meiadnoushadi@gmail.com
+  safe.directory=E:/programing/Git/gityoutub/second_git_project
+  core.editor=notepad.exe
+  color.ui=true
+------------------------------------------------
+git config user.name
+^^^^^^^^^^^^^^^^^^^^
+ show name user used git user
+ ***********************************
+  $ git config user.name
+  MeiadNoushadi
+------------------------------------------------
+git config user.email
+^^^^^^^^^^^^^^^^^^^^^
+ show email user used git user
+ ***********************************
+  $ git config user.email
+  meiadnoushadi@gmail.com
+------------------------------------------------
+git config user.core.editor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ show editor user used git user
+  $ git config user.core.editor
+  notepad.exe
+
+
+/////////////////////////////////////////////////////////////////////////
+///////////////////////////////  orders /////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+------------------------------------------------
+------------------------------------------------
+initialize a repository
+------------------------------------------------
+------------------------------------------------
+git init
+^^^^^^^^
+ initialize a repository in folder project
+ ***********************************
+ $ git init
+ Initialized empty Git repository in E:/programing/Git/Git youtub/.git/
+
+
+------------------------------------------------
+------------------------------------------------
+add
+------------------------------------------------
+------------------------------------------------
+git add .
+^^^^^^^^^
+ add file changed to staged
+ ***********************************
+ Not show process
+------------------------------------------------
+git add nameFile
+^^^^^^^^^^^^^^^^
+ add nameFile changed to staged
+ ******************************
+ Not show process
+
+
+
+------------------------------------------------
+------------------------------------------------
+commit
+------------------------------------------------
+------------------------------------------------
+git commit -m "messages"
+^^^^^^^^^^^^^^^^^^^^^^^^
+ commit of changes file/s in folder
+ ***********************************
+  $ git commit -m "initial commit-01.05.09"
+  [master (root-commit) e0bfd66] initial commit-01.05.09
+  3 files changed, 388 insertions(+)
+  create mode 100644 Git.txt
+  create mode 100644 GitLearn.txt
+  create mode 100644 file1.txt
+  #########################################
+  #### important points about messages ####
+  #########################################
+  # 1- summary of the wrok done
+  # 2- less than 50 characters
+  # 3- verbs written in the present tense
+  # 4- numbering activities
+  # 5- write structure [type file changes]-messages //
+  # activities:messages
+  # 6- used git commit only and write messages in notepad
+  # 7- add white line in message not show in git lg oreder
+  #    is very good
+  # for long messages
+  #########################################
+------------------------------------------------
+git commit -am "message"
+^^^^^^^^^^^^^^^^^^^^^^^^
+ direct file changes in working directory to repository(commit)
+ **************************************************************
+ Not show process
+------------------------------------------------
+git commit --amend -m "message"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ HEAD change in repository => replace new message with new changes
+ ***************************************************************
+  $ git commit --amend
+  [master 7a9dadf] [HTML] : CHANGES IN HEADER     Again rearrange service list  reason : team ui/ux      time : 1401/05/16 SH
+  Date: Sun Aug 7 22:13:13 2022 +0430
+  1 file changed, 6 insertions(+), 6 deletions(-)
+  fingilsh:
+  "agar faghat bekhayam message commit ro avaz
+   konim mitonim stage ro khali konim va ba in
+   dastor message commit HEAD  ro avaz konim
+   halat 2 :
+   mishe zamini ke stage pore va ba zadan
+   in order ham change ha emal mishe ham
+   name commit avaz mishe"
+
+------------------------------------------------
+------------------------------------------------
+rebase
+------------------------------------------------
+------------------------------------------------
+git rebase -i <SHA1 or --root or HEAD~n>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  open totall commit in distance in order
+  in editor 
+  ***************************************
+    pick e15d400 101/totall - initail commit in repository
+    pick dae4165 101/file.txt - add line 2 add meiadnoushadi in file
+    pick ad995d5 101/file.txt - add line 3 in file
+    *********************************************
+    how change message commit changed pick to reword in 
+    in commit save and exit
+    again open editor now you can change message and save
+    and exit 
+
+    --root : select root commit to work
+    SHA1 : select SHA1 base to work (SHA1 not selected)
+    HEAD~n : select n number down in head
+
+------------------------------------------------
+------------------------------------------------
+log
+------------------------------------------------
+------------------------------------------------
+git log
+^^^^^^^
+ show list of commit in repository
+ *********************************
+  $ git log
+  commit e0bfd66865998efb150abfcaccc8160597da096f (HEAD -> master)
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Sun Jul 31 22:29:18 2022 +0430
+
+   initial commit-01.05.09
+------------------------------------------------
+git log -nNumber ex: git log -n4
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ show present commit based on count number
+ *****************************************
+  $ git log -n1
+  commit e0bfd66865998efb150abfcaccc8160597da096f (HEAD -> master)
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Sun Jul 31 22:29:18 2022 +0430
+
+   initial commit-01.05.09
+------------------------------------------------
+git log --since="yyyy-mm-dd" % git log --after="yyyy-mm-dd"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+git log --after=2.days//git log --after=1.week
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ show commits for search time commit after
+ *****************************************
+  $ git log --since=2015-08-09
+  commit e0bfd66865998efb150abfcaccc8160597da096f (HEAD -> master)
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Sun Jul 31 22:29:18 2022 +0430
+
+   initial commit-01.05.09
+ /////////////////////////////////////////
+ fingilsh="
+  be in sort dar halat 2.day ya 1.week amal
+  mikone ke miyad va mire be 2 ro ghabl va ba 
+  after miyad va bad az 2 roze ghabl ro neshon 
+  mide va ba before miyad va ghabl az 2 ro neshon
+  mide"
+------------------------------------------------
+git log --until="yyyy-mm-dd" % git log --before="yyyy-mm-dd"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ show commits for search time commit before
+ *****************************************
+  $ git log --until=2015-08-09
+  commit e0bfd66865998efb150abfcaccc8160597da096f (HEAD -> master)
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Sun Jul 31 22:29:18 2022 +0430
+
+   initial commit-01.05.09
+------------------------------------------------
+git log --author="name"
+^^^^^^^^^^^^^^^^^^^^^^^
+ show commits for write author name
+ **********************************
+  $ git log --author="meiad"
+  commit e0bfd66865998efb150abfcaccc8160597da096f (HEAD -> master)
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Sun Jul 31 22:29:18 2022 +0430
+
+   initial commit-01.05.09 
+------------------------------------------------
+git log --summary
+^^^^^^^^^^^^^^^^^^^^^^^
+ show commits and create file/folder status
+ ******************************************
+  $ git log --author="meiad"
+  commit e0bfd66865998efb150abfcaccc8160597da096f (HEAD -> master)
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Sun Jul 31 22:29:18 2022 +0430
+
+   initial commit-01.05.09 
+------------------------------------------------
+git log --grep="write a port of message commit"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ show commits that write a port in order
+ "search in message commit"
+ ***************************************
+  $ git log --grep="ini"
+  commit e0bfd66865998efb150abfcaccc8160597da096f (HEAD -> master)
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Sun Jul 31 22:29:18 2022 +0430
+
+   initial commit-01.05.09
+------------------------------------------------
+git log --oneline -number
+^^^^^^^^^^^^^^^^^^^^^^^^^
+ show message commit only
+ ************************
+  $ git log --oneline 
+  03092fc (HEAD -> master) update .gitignore
+  4ca69ed add line 8
+  711c157 add temp2.txt over untrack
+  5c9baba temp2.txt out of repository
+  bc21645 add meiadnoushadi to temp2.txt
+  fd5996a Remove temp2 from the reop and modify .gitignore.
+  f4af341 add temp2 file to remove.
+  ------------------------------------
+  -number : baray namaysh tedad message ha ast
+------------------------------------------------
+git log --oneline SHA1..SHA1
+^^^^^^^^^^^^^^^^^^
+ show message in SHA1 to SHA1
+ ****************************
+  $ git log --oneline fd5996a..4ca69ed
+  4ca69ed add line 8
+  711c157 add temp2.txt over untrack
+  5c9baba temp2.txt out of repository
+  bc21645 add meiadnoushadi to temp2.txt
+------------------------------------------------
+git log -p <nameFile>
+^^^^^^^^^^^^^^^^^^^^^
+ show changes to in any commit for nameFile
+ ******************************************
+  $ git log -p
+  commit 03092fc482639c0c1a12444ed3d866f0e3d571f3 (HEAD -> master)
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Fri Aug 19 12:57:34 2022 +0430
+
+   update .gitignore
+
+  diff --git a/.gitignore b/.gitignore
+  index d5d33b0..3aa140f 100644
+  --- a/.gitignore
+  +++ b/.gitignore
+  @@ -1,2 +1 @@
+  file1/
+  -temp2.txt
+  \ No newline at end of file
+
+  commit 4ca69ed38de686a406d4988c23ad2241fa8d7876
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Fri Aug 19 12:49:56 2022 +0430
+
+   add line 8
+
+  diff --git a/temp2.txt b/temp2.txt
+  index c2e18da..048be81 100644
+  --- a/temp2.txt
+  +++ b/temp2.txt
+  @@ -4,4 +4,5 @@ add meiadnousahdi
+  .
+  .
+  .
+------------------------------------------------
+git log --graph
+^^^^^^^^^^^^^^^
+ show branches and master by log
+ *******************************
+  $ git log --graph 
+  * commit 03092fc482639c0c1a12444ed3d866f0e3d571f3 (HEAD -> master)
+  | Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  | Date:   Fri Aug 19 12:57:34 2022 +0430
+  |
+  |     update .gitignore
+  |
+  * commit 4ca69ed38de686a406d4988c23ad2241fa8d7876
+  | Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  | Date:   Fri Aug 19 12:49:56 2022 +0430
+  |
+  |     add line 8
+  |
+  * commit 711c157bed0980914b247c862c89cdb87b875f3a
+  | Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  | Date:   Fri Aug 19 12:43:56 2022 +0430
+  |
+  |     add temp2.txt over untrack
+  |
+  * commit 5c9babab8fb26dda02a0b5b4640dec111cd152e1
+  | Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  | Date:   Fri Aug 19 12:42:50 2022 +0430
+  |
+  |     temp2.txt out of repository
+  |
+  .
+  .
+  .
+
+------------------------------------------------
+git log --graph --oneline --decorate --all
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  show details branch and commit
+  ******************************
+  $ git log --graph --oneline --decorate --all
+  * 8a1d139 (branch2_for_feature) add line 2 in file2
+  | * 25db42f (HEAD -> master) add line 4 in file1
+  |/  
+  | * b12ad57 (new_branch_in_new_branch_for_feature) add line4 in file3
+  | * 50cd314 (new_branch_for_feature) add line 3 in file 3
+  |/  
+  * dc37309 add line2 in folder1/file3
+  * 06559ed add line 1 in folder/file3
+  * 860a2eb add file3 in folder in directory
+  * cacacdd add line 1 in file2
+  * eee063f add file2 in directory
+  * 344bbd0 add line 3 in file1
+  * 63195cc add line 2 in file1
+  * 317c6e1 add line 1 in file1
+  * 0e74d47 initial git in directory
+------------------------------------------------
+------------------------------------------------
+status
+------------------------------------------------
+------------------------------------------------
+git status
+^^^^^^^^^^
+ show details in file by git  
+ ***************************
+  $ git status 
+  On branch master
+  Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+    modified:   Git.txt
+
+  Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+    filelearn/
+
+  no changes added to commit (use "git add" and/or "git commit -a")
+
+------------------------------------------------
+------------------------------------------------
+diff
+------------------------------------------------
+------------------------------------------------
+git diff
+^^^^^^^^
+ show diffrence all file into working and staged 
+ ***********************************************
+  $ git diff
+  diff --git a/filelearn/first_file.txt b/filelearn/first_file.txt
+  index 06ee683..c5b2989 100644
+  --- a/filelearn/first_file.txt
+  +++ b/filelearn/first_file.txt
+  @@ -1 +1,3 @@
+  -this is my first file that I have add into my repository.
+  \ No newline at end of file
+  +this is my first file add into my repository.
+  +
+  +it comes before all other files.
+  \ No newline at end of file
+------------------------------------------------
+git diff nameFile
+^^^^^^^^^^^^^^^^^
+ show diffrence nameFile into repository
+ ***************************************
+  $ git diff filelearn/third_file.txt
+  diff --git a/filelearn/third_file.txt b/filelearn/third_file.txt
+  index cbe0232..98b2daa 100644
+  --- a/filelearn/third_file.txt
+  +++ b/filelearn/third_file.txt
+  @@ -1 +1,2 @@
+  -this is my third file that I have add into my repository.
+  \ No newline at end of file
+  +this is my third file that I have add into my repository.
+  +It comes after all other files.
+  \ No newline at end of file
+------------------------------------------------
+git diff --staged
+^^^^^^^^^^^^^^^^^
+ show details changegit s file in staged
+ ***********************************
+  $ git diff --staged
+  diff --git a/filelearn/first_file.txt b/filelearn/first_file.txt
+  index 06ee683..c5b2989 100644
+  --- a/filelearn/first_file.txt
+  +++ b/filelearn/first_file.txt
+  @@ -1 +1,3 @@
+  -this is my first file that I have add into my repository.
+  \ No newline at end of file
+  +this is my first file add into my repository.
+  +
+  +it comes before all other files.
+  \ No newline at end of file
+------------------------------------------------
+git diff --color-words nameFile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ show details changes words in file
+ **********************************
+  $ git diff --color-words index.html
+  diff --git a/index.html b/index.html
+  index d7fa1ea..4c09c33 100644
+  --- a/index.html
+  +++ b/index.html
+  @@ -36,7 +36,7 @@
+      <li><a href="#"><i class="fas fa-search"></i></a></li>
+      <li><a href="#">Spaces</a></li>
+      <li><a href="#">Paid Courses</a></li>
+      <li><a href="#">Log in</a></li>in by meiad</a></li>
+     </ul>
+    </div>
+   </div>
+------------------------------------------------
+git diff -b --
+  show diffrence only in file and ignore space
+  in file
+  ********************************************
+
+------------------------------------------------
+git diff -w --
+^^^^^^^^^^^^^^
+  show diffrence only in file and ignore line empty
+  in file
+  ********************************************
+------------------------------------------------
+git diff SHA1..SHA1[SHA1 in commits]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ show diffrence in SHA1 to SHA1
+ ******************************
+  $ git diff 5c9baba..03092fc
+  diff --git a/.gitignore b/.gitignore
+  index d5d33b0..3aa140f 100644
+  --- a/.gitignore
+  +++ b/.gitignore
+  @@ -1,2 +1 @@
+  file1/
+  -temp2.txt
+  \ No newline at end of file
+  diff --git a/temp2.txt b/temp2.txt
+  new file mode 100644
+  index 0000000..048be81
+  --- /dev/null
+  +++ b/temp2.txt
+  @@ -0,0 +1,8 @@
+  +meiadnousahdi
+  +list2
+  +add meiadnousahdi
+  +sdfasdf
+  +asf
+  +asdf
+  +asdfasdf
+  +add line 8 in file
+  \ No newline at end of file
+
+------------------------------------------------
+git diff --stat --summary SHA1 SHA1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ show summary diffrence in SHA1 to SHA1
+ **************************************
+  $ git diff --stat --summary 8dbd5a7 cfca58f
+  .gitignore | 1 +
+  index.html | 2 +-
+  temp2.txt  | 9 +++++++++
+  temp3.py   | 0
+  tepmp.py   | 0
+  5 files changed, 11 insertions(+), 1 deletion(-)
+  create mode 100644 .gitignore
+  create mode 100644 temp2.txt
+  create mode 100644 temp3.py
+  create mode 100644 tepmp.py
+------------------------------------------------
+------------------------------------------------
+delete
+------------------------------------------------
+------------------------------------------------
+fingilsh=
+"dar zamane delete kardan 2ta rah vojod darad
+ * yeki hazfe az poshe:
+ 1- add delete activities to working dir
+ 2- add to staged
+ 3- commit delete details
+ * dovomi hazfe az '''git rm nameFile''' :
+ *** -> ham arze ba shift+delete hast.
+ 1-add mostaghim be staged
+ 2- commit delete details"
+------------------------------------------------
+git rm nameFile
+^^^^^^^^^^^^^^^
+ delete nameFile in repository
+ *****************************
+ Not show process
+ finglish="
+ dar in halat file vared satle zobale nameshe
+ faghat az tarigh khode git gable bazgasht hast
+ "
+------------------------------------------------
+git rm --cached temp2.txt
+^^^^^^^^^^^^^^^^^^^^^^^^^
+ delete nameFile in track in repository
+ **************************************
+ $ git rm --cached temp2.txt
+ rm 'temp2.txt'
+ /////////////////////////////////////
+ Note:
+  used in .gitignore
+  used to untracked file
+------------------------------------------------
+------------------------------------------------
+rename
+------------------------------------------------
+------------------------------------------------
+git mv old_nameFile new_nameFile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ changed name file
+ *****************
+ Not show process
+ ////////////////////////////
+ fingilsh:
+ "dar taghir name in dakhe poshe
+  in kar file ro mostaghim mibare
+  to staged be onvan renamed ama
+  ------------------------------
+  git in jor mibine ke file ba name
+  aval kamel hazfe shode file ba name
+  jadid taze sakhte shode pass :
+   1- add kardan file jadid be staged
+  2- git rm kardane file delete shode
+  git bar hast shabahat 50% mifahme ke in
+  file change name karde"
+------------------------------------------------
+------------------------------------------------
+move
+------------------------------------------------
+------------------------------------------------
+git mv nameFile directory1/directory2/nameFile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ move nameFile to directory2
+ ***************************
+ Not show process
+ ////////////////////////////
+ fingilsh:
+ "dar in halat tavajo kon ke chon masir
+  dar dastor dadim pas nameFile ro 
+  move"
+
+------------------------------------------------
+------------------------------------------------
+checkout
+------------------------------------------------
+------------------------------------------------
+NOTE: fingilsh="
+  dar asl kare checkout taghir dadne HEAD pointer
+  hast va ba dashtan SHA1 mishe HEAD ro harja
+  gozasht va dar anja yek branch sakht
+"
+
+
+
+
+
+git checkout -- nameFile/name directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ back file before change
+ ************************
+ Not show process
+ ////////////////////////
+ fingilsh:
+ "dar in order git change hay file ke to working
+  directory hast ro migire delete mikone va file
+  ro bar migardone be halat ghabl az change"
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ~ dar in halat tamami taghirat on file dar
+    dakhele SHA1 on branch bar migarde ~
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ~ new order : restore
+------------------------------------------------
+git checkout SHA1(7a9dadf928f205150ea8) -- nameFile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ delete HEAD => SHA1 is before HEAD
+ recovered change after SHA1 up to head 
+ **************************************
+ Not show process
+ /////////////////////////////////////////
+ fingilsh:"
+  changes in HEAD repository checkout mishe
+  to staged yani hamechi barmigarde be SHA1
+  ghabli tamami change hay HEAD delete va dar
+  ghaleb ye change mire to staged va agar commit
+  koni amalan tamami taghirat HEAD ro pak kardi"
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ~ dar in halat tamami taghirat on file dar
+    dakhele SHA1 made nazar on branch bar
+    migarde ~
+------------------------------------------------
+------------------------------------------------
+revert
+------------------------------------------------
+------------------------------------------------
+git revert SHA1(in HEAD)
+^^^^^^^^^^^^^^^^^^^^^^^^
+ undo mikone hame karai HEAD dar commit new
+ ******************************************
+ $ git revert e21c5824ac4962aa238
+ [master 410eb00] Revert "[HTML] : CHANGES IN HEADER"    
+  revert li menu
+  This reverts commit e21c5824ac4962aa23845656c8b966d0fe148dc7.
+ 1 file changed, 1 deletion(-)
+ fingilsh:"
+  bad az zadan in dastor mostaghiman tatmai
+  taghirat HEAD barax mishe va darkhast sabt 
+  commit dakhele texteditor baz mishe"
+
+
+------------------------------------------------
+------------------------------------------------
+reset
+------------------------------------------------
+------------------------------------------------
+Note1: darsorat dashtane SHA1 farghi nadare ke shoma
+az kodam reset estefade kardid mitonid harekat konid
+va HEAD pointer ro onjabebarid,in ro made nazar begirid
+ke dar --hard hamechi pak mishe va chizi dakhele 'working'
+va 'staged' nameire
+Note2:dar --soft va --mixed har SHA1 ro bedim az khobe on SHA1 be bad
+change ha miyad dakhele working va staged
+------------------------------------------------
+git reset HEAD nameFile
+^^^^^^^^^^^^^^^^^^^^^^^
+ undo file in stage space to working space
+ *****************************************
+ $ git reset HEAD  index.html
+ Unstaged changes after reset:
+ M       index.html
+ Note: replace order by restore
+------------------------------------------------
+git reset --soft SHA1(bfdf66de168e9929c9)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ undo pionter HEAD to SHA1 madenazar
+ ***********************************
+ Not show process
+ //////////////////////////////////
+ fingilsh:"
+  dar in halat tamani taghirat ro mibare
+  dakhele staged ta SHA1 made nazar
+  va HEAD ghabl ro negah midare
+  va darsorat barnagashtam behesh on ro ignore
+  mikone"
+------------------------------------------------
+git reset --soft HEAD~ // ~ in alamat kheye moheme//
+^^^^^^^^^^^^^^^^^^^^^
+	undo HEAD commit in staged index
+	********************************
+	fingilsh="
+	ba in dastor commit head pak shode va change haye
+	on vared staged mishe
+	"
+------------------------------------------------
+git reset --mixed SHA1(bfdf66de168e9929c9)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ undo pionter HEAD to SHA1 madenazar
+ ***********************************
+ Not show process
+ //////////////////////////////////
+ fingilsh:"
+  dar in halat tamani taghirat ro mibare
+  dakhele working tree ta SHA1 made nazar
+  va HEAD ghabl ro negah midare
+  va darsorat barnagashtam behesh on ro ignore
+  mikone"
+------------------------------------------------
+git reset --hard SHA1(bfdf66de168e9929c9)
+^^^^^^^^^
+ undo pionter HEAD to SHA1 madenazar
+ ***********************************
+ $ git reset --hard e21c5824ac4962aa238
+ HEAD is now at e21c582 [HTML] : CHANGES IN HEADER
+        changes menu    changes: add > li > 
+ menu > Exercises2       reason : team DevOps
+ //////////////////////////////////
+ fingilsh:"
+  dar in halat tamani taghirat ro pak
+  mikone.vali vali vali age SHA1 ro negah
+  darim mitonim bargardim in khaly moheme
+	hata agar bad az on taghirate ro commit karde
+	bashid pak mikone va barmigared be halat aval"
+  *** note save story git log ***
+------------------------------------------------
+------------------------------------------------
+restore
+------------------------------------------------
+------------------------------------------------
+git restore --staged nameFile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ undo file in stage to working tree
+ **********************************
+ Not show process
+------------------------------------------------
+git restore nameFile
+^^^^^^^^^^^^^^^^^^^^
+ undo file to before changes
+ ***************************
+ Not show process
+------------------------------------------------
+------------------------------------------------
+clean
+------------------------------------------------
+------------------------------------------------
+git clean -i
+^^^^^^^^^^^^
+ show process clean working
+ **************************
+  $ git clean -i
+  Would remove the following items:
+  jank1.txt  jank2.txt  jank3.txt
+  *** Commands ***
+   1: clean                2: filter by pattern    3: select by numbers       
+   4: ask each             5: quit                 6: help
+  is select number and enter <======
+  so selected item show massages would delete
+  so click enter item is deleted
+  Bye.
+------------------------------------------------
+git clean -n
+^^^^^^^^^^^^
+ preparing untrack to cleaning
+ *****************************
+  $ git clean -n
+  Would remove jank1.txt
+  Would remove jank2.txt
+  Would remove jank3.txt
+------------------------------------------------
+git clean -f
+^^^^^^^^^^^^
+ cleaning file untrack
+ *********************
+  $ git clean -f
+  Removing jank1.txt
+  Removing jank2.txt
+  Removing jank3.txt
+ Not:"file is untrack delete in working directory
+   if file is track or untrack in stage cannot
+   deleted"
+------------------------------------------------
+------------------------------------------------
+.gitignore
+------------------------------------------------
+------------------------------------------------
+The simplest regular expressions :
+1- *    ==> *.php
+2- !    ==> !indext.php
+3-address folder ==> User/videos/
+4-#     ==> Documention
+Note :
+ 1.File in repository is existence and
+  untracked ==> step 1 : git rm --cached nameFile
+                step 2 : git add and git commit 
+ 2.git not track empty folders
+
+*** www.gitignore.io ***
+
+------------------------------------------------
+------------------------------------------------
+ls-tree
+------------------------------------------------
+------------------------------------------------
+git ls-tree master/nameBranch_OR_HEAD BY namefolder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ Show file and folder in branch master in HEAD pointer
+ *****************************************************
+  $ git ls-tree master
+  100644 blob 3aa140f1fd2ab03ef60e9967bd9b432618fabaee    .gitignore
+  040000 tree 7b8701426732df8af0549d4ef0cb7f296f2d07a9    images
+  100644 blob 40497184058b43cd88c8d64752ca656958858e3e    index.html
+  100644 blob efbf9f928511cb6761f643b1d7b921c9925c116a    style.css
+  100644 blob 048be81509f3c293dde4d30e12047ad3c46c255f    temp2.txt
+ //////////////////////////////////
+ fingilsh="
+  dar in order be in sorat kamel mishavad ke sakhtar
+  derakhti file va folder hay akharin commit ra baray
+   ma neshan midahad
+  va ba alamat '^' mitavanim be commit hay ghabli bar
+  gardim va bebinam ke che file va folder hay ezafe ya
+  hazf shodeand"
+------------------------------------------------
+git ls-tree master/nameBranch_OR_HEAD~ BY namefolder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ Show file and folder in branch master in one step before HEAD pointer
+ *********************************************************************
+  $ git ls-tree master
+  100644 blob 3aa140f1fd2ab03ef60e9967bd9b432618fabaee    .gitignore
+  040000 tree 7b8701426732df8af0549d4ef0cb7f296f2d07a9    images
+  100644 blob 40497184058b43cd88c8d64752ca656958858e3e    index.html
+  100644 blob efbf9f928511cb6761f643b1d7b921c9925c116a    style.css
+  100644 blob 048be81509f3c293dde4d30e12047ad3c46c255f    temp2.txt
+ //////////////////////////////////
+ fingilsh="
+ be tedad ~ yek step miyad ghabl
+ va mishe bad az ~ in number gozasht
+ "
+------------------------------------------------
+git ls-tree master/nameBranch_OR_HEAD^ BY namefolder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ Show file and folder in branch master in one step before HEAD pointer
+ *********************************************************************
+  $ git ls-tree master
+  100644 blob 3aa140f1fd2ab03ef60e9967bd9b432618fabaee    .gitignore
+  040000 tree 7b8701426732df8af0549d4ef0cb7f296f2d07a9    images
+  100644 blob 40497184058b43cd88c8d64752ca656958858e3e    index.html
+  100644 blob efbf9f928511cb6761f643b1d7b921c9925c116a    style.css
+  100644 blob 048be81509f3c293dde4d30e12047ad3c46c255f    temp2.txt
+ //////////////////////////////////
+ fingilsh="
+ be tedad ^ yek step miyad ghabl
+ va ^^ mishe 2 step gabal az HEAD
+ "
+
+
+------------------------------------------------
+------------------------------------------------
+show
+------------------------------------------------
+------------------------------------------------
+git show SHA1{blobs:find(git ls-tree master)}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ show information blobs and tree and commit
+ ******************************************
+ show into file
+ ---------------
+ git show SHA1{bolb}
+  $ git show efbf9f92
+  * {
+  margin: 0px;
+  padding: 0px;
+  }
+  body {
+  font-family: "Source Sans Pro";
+  }
+  .header {
+  height: 80px;
+  background-color: #fff;
+  position: relative;
+ ----------------------------
+ git show SHA1{tree:find(git ls-tree master)}
+ ^^^^^^^^^^^^^^^^^^^
+  show info folder how to file and other folders
+  **********************************************
+    $ git show 7b870142
+    tree 7b870142
+
+    profile.jpg
+ ----------------------------
+ git show SHA1{commit}
+  $ git show 711c157
+  commit 711c157bed0980914b247c862c89cdb87b875f3a
+  Author: MeiadNoushadi <meiadnoushadi@gmail.com>
+  Date:   Fri Aug 19 12:43:56 2022 +0430
+
+   add temp2.txt over untrack
+
+  diff --git a/temp2.txt b/temp2.txt
+  new file mode 100644
+  index 0000000..c2e18da
+  --- /dev/null
+  +++ b/temp2.txt
+  @@ -0,0 +1,7 @@
+  +meiadnousahdi
+  +list2
+  +add meiadnousahdi
+  +sdfasdf
+  +asf
+  +asdf
+  +asdfasdf
+  \ No newline at end of file
+
+
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////branch///////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+
+1-advantage branching
+  * inexpensive for RAM CPU
+  * create new idea
+  * composition project
+  * wow!! one environment woking / staging index / repository
+    for work different in branch
+  * switch branch fasting
+
+
+
+------------------------------------------------
+------------------------------------------------
+branch
+------------------------------------------------
+------------------------------------------------
+git branch
+^^^^^^^^^^
+  show all branch in repository
+  *****************************
+    $ git branch
+    * master
+    -----------------------------
+    $ ls -la .git/refs/heads/
+      total 1
+      drwxr-xr-x 1 MEIAD 197121  0 Sep 14 23:04 ./    
+      drwxr-xr-x 1 MEIAD 197121  0 Sep 14 23:04 ../   
+      -rw-r--r-- 1 MEIAD 197121 41 Sep 13 21:25 master
+------------------------------------------------
+git branch -r
+^^^^^^^^^^^^^
+  show all branch remote in repository
+  ************************************
+    $ git branch -r
+      origin/master
+------------------------------------------------
+git branch -a
+^^^^^^^^^^^^^
+  show all branch local and remote in repository
+  **********************************************
+    $ git branch -a
+    * master
+      remotes/origin/master
+------------------------------------------------
+git branch new_branch_for_feature
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  create new branch in repository
+  *******************************
+    Not show process
+------------------------------------------------
+git branch --merged
+^^^^^^^^^^^^^^^^^^^
+  show branch follow other branch or include other branch
+  *******************************************************
+    $ git branch --merged 
+    * name branch 1 -> branch 2 in the branch 1
+    * name branch 2 -> working branch
+    * name branch 3 -> branch 3 in the branch 2
+------------------------------------------------
+git branch -m oldName newName or --move oldName newName
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  change name branch
+  ******************
+    Not process show
+------------------------------------------------
+git branch -d nameBranch
+^^^^^^^^^^^^^^^^^^^^^^^^
+  delete branch
+  *************
+  Note: order is empty commit in branch
+    $ git branch -d branch_to_delete 
+    Deleted branch branch_to_delete (was ec6aded). 
+------------------------------------------------
+git branch -D nameBranch
+^^^^^^^^^^^^^^^^^^^^^^^^
+  delete branch
+  *************
+  Note: order is include commit in branch
+    $ git branch -d branch_to_delete 
+    Deleted branch branch_to_delete (was ec6aded). 
+------------------------------------------------
+git branch --set-upstream-to=<alias>/<nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  add to track branch in clone by git.company(ex:github) ?????????
+  ******************************************************
+  NOTE:finglish="
+    havaseman bashad ke baray inke in branch track
+    hatam bayad dar github push shode bashad va az 
+    tarigh alias hatam dar ertebat bashad
+    alias=origin => URL baray clone va push kardan
+  "
+$ git branch --set-upstream-to=origin/eidt_file_python
+branch 'eidt_file_python' set up to track 'origin/eidt_file_python'.
+------------------------------------------------
+------------------------------------------------
+checkout
+------------------------------------------------
+------------------------------------------------
+git checkout nameBranch
+^^^^^^^^^^^^^^^^^^^^^^^
+  switch between branch
+  *********************
+    $ git checkout new_branch_for_feature 
+    Switched to branch 'new_branch_for_feature'
+    Note:fingilsh="
+    1- age file dar halat modified bashe va bekhayam
+    switch konim nemizare vali age file untrack be ma
+    ejaze mide ke be rahati switch konim va mahdodiyati
+    ghale namishe
+    2- age file modified shode dashte bashim 3 rah vojod dare:
+      a)  rah aval inke to taghirat ro dar halat stash borde bad checkout konim
+      b)  rah dovom ine ke commit anjam dade bad switch komim
+      c)  rah sevom ine ke az order git restore nameFile estefade
+          konim va khodemon dasti change haro delete konim
+    "
+------------------------------------------------
+git checkout -b nameBranch
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+  create and switch a new branch
+  ******************************
+    $ git checkout -b branch2_for_feature
+    Switched to a new branch 'branch2_for_feature'
+  ---------------------------
+  NOTE:fingilsh="
+  dar zame sakht yek branch bayad havaseman
+  bashe ke az roe kodom branch darim branch 
+  new misazim chon branch new tagirate branch
+  valed ro be ers mibare
+  "
+  NOTE:finglish="
+  dar zame switch kardan bayad havaseman bashad
+  ke na bayad hich file modified shode mojod bashe
+  chon nemizare switch konim vali ba file hay untrack
+  moshkeli nadare
+  "
+------------------------------------------------
+------------------------------------------------
+switch
+------------------------------------------------
+------------------------------------------------
+git switch nameBranch
+^^^^^^^^^^^^^^^^^^^^^
+  switch branch
+  *************
+    $ git switch master 
+    Switched to branch 'master'
+------------------------------------------------
+git switch -c <new-branch> or --create <new-branch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  create and switch a new branch
+  ******************************
+    $ git switch -c new_branch
+    Switched to a new branch 'new_branch'
+------------------------------------------------
+git switch -f nameBranch
+^^^^^^^^^^^^^^^^^^^^^^^^
+  switch branch and overwrite change if working directory
+  *******************************************************
+    $ git switch -f master 
+    Switched to branch 'master'
+------------------------------------------------
+------------------------------------------------
+diff
+------------------------------------------------
+------------------------------------------------
+git diff nameBranch1..nameBranch2 --color-words
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  show diffrence file in nameBranchs
+  **********************************
+  Note: color red for nameBranch1
+        color green for nameBranch2
+    $ git diff master..new_branch_for_feature 
+    diff --git a/file1.txt b/file1.txt
+    index e1e7e4e..8cf2f17 100644
+    --- a/file1.txt
+    +++ b/file1.txt
+    @@ -1,7 +1,3 @@
+    line 1
+    line 2
+    -line 3
+    -line 4
+    -line 5
+    -line 6
+    -line 7
+    \ No newline at end of file
+    +line 3
+    \ No newline at end of file
+    diff --git a/folder1/file3.txt b/folder1/file3.txt
+------------------------------------------------
+------------------------------------------------
+merge
+------------------------------------------------
+------------------------------------------------
+NOTE: startage of merge system git:
+  1-  Fast Forward => Atumatic merge
+  2-  ort => Atumatic merge
+  3-  recursive => Atumatic merge
+  4-  conflict => move to nameBranch|MERGING environment 
+      add handle to merge file
+
+
+NOTE: fingilsh="
+  shoro merge kardan injure ke az jaye ke 
+  taghirat aghaz shode dar halat fast forward
+  mizare beyne code ha
+"
+
+NOTE: fingilsh="
+  deghat konid ke zamae sakht branch be valed(parent)
+  branch hatman tavajo konim chon in kar hat ke mohtavaye
+  yek shakhe ro neshon mide
+"
+------------------------------------------------
+git merge --abort
+^^^^^^^^^^^^^^^^^
+  cancel merge total
+  ******************
+    Not show process
+------------------------------------------------
+git merge nameBranch
+^^^^^^^^^^^^^^^^^^^^
+  merge nameBranch by include your branch
+  ***************************************
+    $ git merge write_body 
+    Updating 96fb1d7..dff1795
+    Fast-forward
+    file1.txt | 4 ++--
+    1 file changed, 2 insertions(+), 2 deletions(-)
+
+    Note:
+    finglish="
+    1-barye merge kardan bayad havaseman bashad
+    ke dar branch hadaf hastim va bad ba in kar
+    har branche ke mikhayam roye branch hadaf
+    merge beshe ro be onvan nameBranch be order
+    bedim
+    2-havaseman bashad ke branch hadaf hatman
+    clean bashad va hich file M ya Untracked dar
+    git status nabashad
+    3- dar halat conflict ma bad az zadan git merge
+    vared mohit MERGING mishavim
+    " 
+------------------------------------------------
+git merge --no-ff nameBranch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  merge by startage ort
+  *********************
+
+
+
+
+------------------------------------------------
+git merge --ff-only nameBranch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  merge by startage Fast Forward
+  ******************************
+
+
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////stash////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+stash => save change file without commit
+NOTE : fingilsh="
+  0-ta zamini ke dar yek branch commit nakardid va switch konid
+    on change haro dar halat modified mibare va ejaze switch
+    ro mide vali ta commit dar branch ejad kardid dige hish switch
+    ro be shoma ejaze nemide ta ya stash ya commit ya restore konid
+    change hatom ro
+  1-agar 2 branch shabih ham bashad ejaze switch kardan ra be
+    ma midahad va injast ke ma bayad tasmin begirm ke change ha
+    dar kondam branch commit shavad
+  2-in ro ham bedonim ke stash kardan change ha ro emal
+    nemikone va ba stash kardan khode change haro mindazim
+    dakhele stash
+  3-change hay dakhele stash miyad va change haro bahasbe
+    inke changeha az kodam khat code moshabeh shoro shode va
+    kodam khat code moshabeh payan yafte baraye ma namaysh mide va agar 
+    toye in 2 line chizi nabashe Auto-merge anjam mide vagana
+    az ma mikhat ke dasti change haro emal konim
+"
+------------------------------------------------
+------------------------------------------------
+save
+------------------------------------------------
+------------------------------------------------
+git stash save 'messages'
+^^^^^^^^^^^^^^^^^^^^^^^^^
+  save change into stash in branch
+  ********************************
+    $ git stash save 'add 0.3'
+    Saved working directory and index state On new: add 0.3
+
+------------------------------------------------
+------------------------------------------------
+list
+------------------------------------------------
+------------------------------------------------
+git stash list
+^^^^^^^^^^^^^^
+  show list message stash in branch
+  *********************************
+    $ git stash list
+    stash@{0}: On new: add 0.3
+
+NOTE: fingilsh="
+  show stash yek branch faghat dakhele haman branch
+  ghabele didan nist balke shoma mitonid az dighar
+  branch ha'ham in stash ha ghabale didan hastan
+"
+------------------------------------------------
+------------------------------------------------
+show
+------------------------------------------------
+------------------------------------------------
+git stash show -p StashId
+^^^^^^^^^^^^^^^^^^^^^^^^^
+  show details change into stash in branch
+  ****************************************
+    $ git stash  show -p  stash@{0}
+    diff --git a/sample.txt b/sample.txt
+    index ff83d8a..a9625d6 100644
+    --- a/sample.txt
+    +++ b/sample.txt
+    @@ -1,5 +1,6 @@
+    line0.0
+    line0.1
+    line0.2
+    +line0.3
+    line1.0
+    line2.0
+    \ No newline at end of file
+
+  NOTE:fingilsh="
+    attribute --color-words ham ke dar diff dashtim
+    ham dar inja kar mikone
+  "
+------------------------------------------------
+------------------------------------------------
+pop and apply
+------------------------------------------------
+------------------------------------------------
+NOTE:fingilsh="
+  1-dar kolan stash change ro enteghal mide pass khode
+    file ro kolan change nemikone faghat change hay dakhele
+    stash ro mizare to dele code ha
+"
+------------------------------------------------
+git stash pop // git stash pop stash{numberStash}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  merge stash@{0} into file
+  *************************
+    $ git stash pop
+    Auto-merging sample.txt
+    CONFLICT (content): Merge conflict in sample.txt
+    On branch testStash
+    Unmerged paths:
+      (use "git restore --staged <file>..." to unstage)
+      (use "git add <file>..." to mark resolution)
+            both modified:   sample.txt
+
+    no changes added to commit (use "git add" and/or "git commit -a")
+    The stash entry is kept in case you need it again.
+    -------------------
+  NOTE: fingilsh="
+        dar pop miyad va har stash ke darim ya pish farz stash{0}
+        ro ham emal mikone va ham stash morede nazar ro Dropped
+        mikone
+        "
+
+------------------------------------------------
+git stash apply // git stash apply stash{numberStash}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  merge stash@{0} into file
+  *************************
+    $ git stash apply
+    Auto-merging sample.txt
+    CONFLICT (content): Merge conflict in sample.txt
+    On branch new
+    Unmerged paths:
+      (use "git restore --staged <file>..." to unstage)
+      (use "git add <file>..." to mark resolution)
+            both modified:   sample.txt
+
+    no changes added to commit (use "git add" and/or "git commit -a")
+  
+    NOTE: fingilsh="
+        dar apply miyad va har stash ke darim ya pish farz stash{0}
+        ro ham emal mikone va dige stash ro Dropped nemikone va mitonid
+        on stash ro dakhele stash dashte bashid va barha azash estefade
+        konid
+        "
+
+------------------------------------------------
+------------------------------------------------
+drop and clear
+------------------------------------------------
+------------------------------------------------
+git stash drop StashId
+^^^^^^^^^^^^^^^^^^^^^^
+  delete StashId in stash
+  ***********************
+    $ git stash drop stash@{0} 
+    Dropped stash@{0} (717474890fecfdd9c8aeb2116cc7b79923ef6918)
+------------------------------------------------
+git stash clear
+^^^^^^^^^^^^^^^
+  delete all stashId in stash
+  ***************************
+  NOT show order
+
+#########################################################################
+######################### learn Git remote ##############################
+#########################################################################
+------------------------------------------------
+------------------------------------------------
+remote
+------------------------------------------------
+------------------------------------------------
+git remote
+^^^^^^^^^^
+  show total remote 
+  *****************
+    $ git remote 
+    origin
+
+------------------------------------------------
+git remote -v
+^^^^^^^^^^^^^
+  show address for fetch and push
+  *******************************
+    $ git remote -v
+    origin  https://github.com/meiadnoushadi/red.git (fetch)
+    origin  https://github.com/meiadnoushadi/red.git (push) 
+------------------------------------------------
+git remote add <alias> <URL>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  create new remote repository
+  ****************************
+  not show details
+
+------------------------------------------------
+git remote rm nameRemote(alias)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  remove remote
+  *************
+  not show details
+------------------------------------------------
+git remote rename <oldname> <newname>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  change alias name remote
+  ************************
+    $ git remote rename origin hub
+    Renaming remote references: 100% (3/3), done.
+------------------------------------------------
+------------------------------------------------
+push
+------------------------------------------------
+------------------------------------------------
+git push nameRemote nameBranch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  add nameBranch push in github
+  *****************************
+  NOTE:fingilsh="
+  age dar anjam in kar be moshkel khordid
+  va erro 443 dad[SSL] az in order estefade 
+  konid "git config --global http.sslBackend schannel"
+  ------------------------
+    $ git push -u origin master 
+    info: please complete authentication in your browser...
+    Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+    remote: 
+    remote: Create a pull request for 'master' on GitHub by visiting:
+    remote:      https://github.com/meiadnoushadi/red/pull/new/master
+    remote:
+    To https://github.com/meiadnoushadi/red.git
+    * [new branch]      master -> master
+    branch 'master' set up to track 'origin/master'.
+------------------------------------------------
+git push <alias> --delete <nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  delete remote branch in git local and git company(ex:github)
+  ************************************************************
+    $ git push --delete origin new
+    To https://github.com/meiadnoushadi/red.git
+    - [deleted]         new
+------------------------------------------------
+------------------------------------------------
+clone
+------------------------------------------------
+------------------------------------------------
+git clone httpsAddressProjectInGithub <newNameProject>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  clone porject in github in local system
+  ***************************************
+    $ git push origin master 
+    Enumerating objects: 9, done.
+    Counting objects: 100% (9/9), done.
+    Delta compression using up to 4 threads
+    Compressing objects: 100% (7/7), done.
+    Writing objects: 100% (9/9), 31.93 KiB | 2.90 MiB/s, done.
+    Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+    remote: Resolving deltas: 100% (1/1), done.
+    To https://github.com/meiadnoushadi/red.git
+    * [new branch]      master -> master
+
+NOTE:fingilsh="
+  vaghti ke clone miyad az branch defalt clone
+  va in ro ma dakhe .git/config entekhabesh mikonim
+  va har bar clone kardan faghat on branch ke entekhabesh
+  kardim ro clone mikone
+"
+
+------------------------------------------------
+------------------------------------------------
+fetch
+------------------------------------------------
+------------------------------------------------
+git fetch <alias>
+^^^^^^^^^^^^^^^^^
+  syns local project by remote project
+  ************************************
+    $ git fetch origin
+    remote: Enumerating objects: 28, done.
+    remote: Counting objects: 100% (28/28), done.
+    remote: Compressing objects: 100% (15/15), done.
+    remote: Total 24 (delta 13), reused 19 (delta 8), pack-reused 0
+    Unpacking objects: 100% (24/24), 2.27 KiB | 2.00 KiB/s, done.
+    From https://github.com/meiadnoushadi/red
+      3f1cb30..1f96084  master           -> origin/master
+      171c509..c87f8c8  eidt_file_python -> origin/eidt_file_python
+    * [new branch]      new1             -> origin/new1
+
+  NOTE:finglish="
+    bad az fetch in etefagh miyofte ke miyad tamami branch hay 
+    git ro miyare dakhele git local ama merge nemikone yani dast
+    be file asli nemizane vali mige ke cheghad change dashtim
+    va ma hastim ke tasmim migirim ke merge konim ya na vali
+    zamai ke clone mikonin va yek project ro baraye bar aval migirim
+    miyad tamami branch origin neshome mide va branch master ro ham
+    reye origin/master ghrar mide
+    ***************
+    3 nokte mohem:
+      1- ghabl az shoro code nevise fetch kon
+      2- ghabl az push kardan fetch kon
+      3- bad az etmam kar fetch kon
+  "
+
+------------------------------------------------
+------------------------------------------------
+pull
+------------------------------------------------
+------------------------------------------------
+git pull = git fetch + git merge
+
+
+
+
+
+
+
+
+
+
+
+#########################################################################
+########################## learn other Git ##############################
+#########################################################################
+
+------------------------------------------------
+------------------------------------------------
+alias
+------------------------------------------------
+------------------------------------------------
+1- move to ~ dir
+2- git config --global alias.st "status" ==> add shortcuts = git status : git st
+3- add alias in file .gitconfig
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
